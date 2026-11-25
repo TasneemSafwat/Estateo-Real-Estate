@@ -1,0 +1,93 @@
+import type { User, UserPreferences } from '@/types';
+import { buildAvatar } from '@/utils/images';
+
+export const DEFAULT_PREFERENCES: UserPreferences = {
+  theme: 'dark',
+  language: 'en',
+  currency: 'USD',
+  emailNotifications: true,
+  priceAlerts: true,
+  weeklyDigest: false,
+  defaultListingType: 'all',
+  preferredCity: 'all',
+};
+
+export const DEMO_CREDENTIALS = {
+  admin: { email: 'admin@estateo.app', password: 'admin1234' },
+  user: { email: 'user@estateo.app', password: 'user1234' },
+} as const;
+
+export const SEED_USERS: User[] = [
+  {
+    id: 'user-admin',
+    name: 'Amira Saleh',
+    email: DEMO_CREDENTIALS.admin.email,
+    role: 'admin',
+    avatar: buildAvatar('Amira Saleh', 1),
+    phone: '+1 (415) 555-0100',
+    city: 'San Francisco',
+    bio: 'Platform administrator overseeing listings quality and agent performance.',
+    createdAt: '2024-02-11T09:24:00.000Z',
+    preferences: { ...DEFAULT_PREFERENCES, defaultListingType: 'sale' },
+  },
+  {
+    id: 'user-demo',
+    name: 'Omar Khalil',
+    email: DEMO_CREDENTIALS.user.email,
+    role: 'user',
+    avatar: buildAvatar('Omar Khalil', 0),
+    phone: '+1 (415) 555-0121',
+    city: 'Los Angeles',
+    bio: 'Looking for a family home with a garden and a short commute.',
+    createdAt: '2025-06-02T14:05:00.000Z',
+    preferences: { ...DEFAULT_PREFERENCES, preferredCity: 'los-angeles' },
+  },
+  {
+    id: 'user-3',
+    name: 'Priya Raman',
+    email: 'priya.raman@example.com',
+    role: 'user',
+    avatar: buildAvatar('Priya Raman', 2),
+    phone: '+1 (206) 555-0148',
+    city: 'Seattle',
+    bio: 'First-time buyer researching downtown apartments.',
+    createdAt: '2025-08-19T11:41:00.000Z',
+    preferences: { ...DEFAULT_PREFERENCES },
+  },
+  {
+    id: 'user-4',
+    name: 'Jonas Weber',
+    email: 'jonas.weber@example.com',
+    role: 'user',
+    avatar: buildAvatar('Jonas Weber', 3),
+    phone: '+49 30 5550 0199',
+    city: 'Berlin',
+    bio: 'Investor focused on rental yield and long-term appreciation.',
+    createdAt: '2025-09-27T08:12:00.000Z',
+    preferences: { ...DEFAULT_PREFERENCES, defaultListingType: 'rent' },
+  },
+  {
+    id: 'user-5',
+    name: 'Chen Wei',
+    email: 'chen.wei@example.com',
+    role: 'user',
+    avatar: buildAvatar('Chen Wei', 0),
+    phone: '+65 6555 0177',
+    city: 'Singapore',
+    bio: 'Relocating with family, needs international school proximity.',
+    createdAt: '2025-10-14T16:33:00.000Z',
+    preferences: { ...DEFAULT_PREFERENCES },
+  },
+  {
+    id: 'user-6',
+    name: 'Isabella Rossi',
+    email: 'isabella.rossi@example.com',
+    role: 'user',
+    avatar: buildAvatar('Isabella Rossi', 1),
+    phone: '+34 91 555 0164',
+    city: 'Madrid',
+    bio: 'Searching for a pied-à-terre close to the old town.',
+    createdAt: '2025-11-01T10:02:00.000Z',
+    preferences: { ...DEFAULT_PREFERENCES },
+  },
+];

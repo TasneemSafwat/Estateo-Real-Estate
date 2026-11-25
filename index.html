@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="scroll-smooth dark" style="color-scheme: dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#071215" />
+    <script>
+      // Dark is the default. Apply the saved choice before first paint to avoid a flash.
+      try {
+        var saved = JSON.parse(localStorage.getItem("estateo:theme") || "null");
+        var root = document.documentElement;
+        if (saved === "light") {
+          root.classList.remove("dark");
+          root.style.colorScheme = "light";
+        }
+      } catch (e) {}
+    </script>
+
+    <title>Estateo — Premium Real Estate Platform</title>
+    <meta
+      name="description"
+      content="Estateo is a premium real estate platform to explore, compare and shortlist luxury homes, apartments and villas for sale and rent."
+    />
+    <meta name="author" content="Estateo" />
+    <link rel="canonical" href="https://estateo.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Estateo" />
+    <meta property="og:title" content="Estateo — Premium Real Estate Platform" />
+    <meta
+      property="og:description"
+      content="Explore, compare and shortlist premium properties for sale and rent on Estateo."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=75&w=1200&h=630"
+    />
+    <meta property="og:url" content="https://estateo.app/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=75&w=1200&h=630"
+    />
+    <meta name="twitter:title" content="Estateo — Premium Real Estate Platform" />
+    <meta
+      name="twitter:description"
+      content="Explore, compare and shortlist premium properties for sale and rent on Estateo."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

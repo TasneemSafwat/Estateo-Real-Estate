@@ -1,0 +1,140 @@
+import type { CityInsight, PropertyCategoryStat } from '@/types';
+import { categoryPhoto, cityPhoto } from '@/utils/images';
+
+export const CITIES: CityInsight[] = [
+  {
+    name: 'San Francisco',
+    nameAr: 'سان فرانسيسكو',
+    country: 'United States',
+    listingsCount: 214,
+    startingPrice: 780_000,
+    image: cityPhoto('San Francisco'),
+    coordinates: { lat: 37.7749, lng: -122.4194 },
+  },
+  {
+    name: 'Los Angeles',
+    nameAr: 'لوس أنجلوس',
+    country: 'United States',
+    listingsCount: 268,
+    startingPrice: 640_000,
+    image: cityPhoto('Los Angeles'),
+    coordinates: { lat: 34.0522, lng: -118.2437 },
+  },
+  {
+    name: 'New York',
+    nameAr: 'نيويورك',
+    country: 'United States',
+    listingsCount: 312,
+    startingPrice: 925_000,
+    image: cityPhoto('New York'),
+    coordinates: { lat: 40.7128, lng: -74.006 },
+  },
+  {
+    name: 'Miami',
+    nameAr: 'ميامي',
+    country: 'United States',
+    listingsCount: 187,
+    startingPrice: 520_000,
+    image: cityPhoto('Miami'),
+    coordinates: { lat: 25.7617, lng: -80.1918 },
+  },
+  {
+    name: 'Dubai',
+    nameAr: 'دبي',
+    country: 'United Arab Emirates',
+    listingsCount: 341,
+    startingPrice: 410_000,
+    image: cityPhoto('Dubai'),
+    coordinates: { lat: 25.2048, lng: 55.2708 },
+  },
+  {
+    name: 'Riyadh',
+    nameAr: 'الرياض',
+    country: 'Saudi Arabia',
+    listingsCount: 176,
+    startingPrice: 295_000,
+    image: cityPhoto('Riyadh'),
+    coordinates: { lat: 24.7136, lng: 46.6753 },
+  },
+  {
+    name: 'Cairo',
+    nameAr: 'القاهرة',
+    country: 'Egypt',
+    listingsCount: 205,
+    startingPrice: 145_000,
+    image: cityPhoto('Cairo'),
+    coordinates: { lat: 30.0444, lng: 31.2357 },
+  },
+  {
+    name: 'Barcelona',
+    nameAr: 'برشلونة',
+    country: 'Spain',
+    listingsCount: 149,
+    startingPrice: 360_000,
+    image: cityPhoto('Barcelona'),
+    coordinates: { lat: 41.3874, lng: 2.1686 },
+  },
+];
+
+export const CITY_MAP: Record<string, CityInsight> = Object.fromEntries(
+  CITIES.map((city) => [city.name, city]),
+);
+
+export const CATEGORY_STATS: PropertyCategoryStat[] = [
+  {
+    type: 'apartment',
+    label: 'Apartments',
+    labelAr: 'شقق',
+    count: 486,
+    image: categoryPhoto('apartment'),
+  },
+  {
+    type: 'villa',
+    label: 'Villas',
+    labelAr: 'فلل',
+    count: 173,
+    image: categoryPhoto('villa'),
+  },
+  {
+    type: 'house',
+    label: 'Houses',
+    labelAr: 'منازل',
+    count: 254,
+    image: categoryPhoto('house'),
+  },
+  {
+    type: 'penthouse',
+    label: 'Penthouses',
+    labelAr: 'بنتهاوس',
+    count: 62,
+    image: categoryPhoto('penthouse'),
+  },
+  {
+    type: 'townhouse',
+    label: 'Townhouses',
+    labelAr: 'تاون هاوس',
+    count: 118,
+    image: categoryPhoto('townhouse'),
+  },
+  {
+    type: 'studio',
+    label: 'Studios',
+    labelAr: 'استوديوهات',
+    count: 97,
+    image: categoryPhoto('studio'),
+  },
+  {
+    type: 'office',
+    label: 'Offices',
+    labelAr: 'مكاتب',
+    count: 84,
+    image: categoryPhoto('office'),
+  },
+  {
+    type: 'land',
+    label: 'Land',
+    labelAr: 'أراضٍ',
+    count: 39,
+    image: categoryPhoto('land'),
+  },
+];
